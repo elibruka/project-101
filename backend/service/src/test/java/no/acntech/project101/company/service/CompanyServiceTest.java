@@ -44,7 +44,7 @@ class CompanyServiceTest {
         String orgNr = "123456789";
         String companyName = "CompanyName";
         final Company company = new Company(companyName, orgNr);
-        when(brregRestClient.lookupOrganizationName(orgNr)).thenReturn(companyName);
+        when(brregRestClient.lookupOrganizationName2(orgNr)).thenReturn(companyName);
         when(companyRepository.save(any(Company.class))).thenReturn(company);
 
         final Company savedCompany = companyService.save(orgNr);

@@ -102,7 +102,7 @@ class CompanyResourceIT {
     @Test
     void createCompanyByOrgNr() {
         String orgNr = "123456789";
-        doReturn(orgNr).when(brregRestClient).lookupOrganizationName(anyString());
+        doReturn(orgNr).when(brregRestClient).lookupOrganizationName2(anyString());
 
         ResponseEntity response = testRestTemplate.exchange(
                 TestUtil.createURL(port, "/companies/"+orgNr),
