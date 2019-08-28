@@ -48,8 +48,17 @@ public class EmployeeResource {
         return ResponseEntity.ok(employeeDto);
     }
 
-    @GetMapping
-    public ResponseEntity<List<EmployeeDto>>
+    /*@GetMapping("list")
+    public ResponseEntity<List<EmployeeDto>> findByIds(@RequestBody final List<Long> idList){
+        List<EmployeeDto> employeeDtoList = new ArrayList<EmployeeDto>();
+        for (Long tempId : idList) {
+            EmployeeDto e = new EmployeeDto(tempId,"E", "K", LocalDate.of(2010, 01, 01),971547235L);
+            employeeDtoList.add(e);
+
+        }
+        return ResponseEntity.ok(employeeDtoList);
+    }*/
+
     @PostMapping
     public ResponseEntity createEmployee(@RequestBody final EmployeeDto employeeDto) {
         //TODO Create a POST endpoint that accepts an employeeDTO and saves it in the database
