@@ -6,8 +6,8 @@
 * We will finish writing the empty test methods in EmployeeServiceTest (marked with TODO)
 
 ### WEB layer
-* We will finish writing the empty test methods in EmployeeServiceTest (marked with TODO)
-* We will finish writing the empty test methods in EmployeeServiceIT integration test (marked with TODO)
+* We will finish writing the empty test methods in EmployeeResourceTest (marked with TODO)
+* We will finish writing the empty test methods in EmployeeResourceIT integration test (marked with TODO)
 
 #### If you have time
 * Add the missing tests for updating an employee in the unit and integration tests in WEB layer

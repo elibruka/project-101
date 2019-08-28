@@ -9,6 +9,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -27,7 +28,10 @@ class EmployeeServiceTest {
 
     @Test
     void save() {
-        //TODO: implement
+        final Employee employee = new Employee("Elisabeth", "Karud", LocalDate.of(1995,06,20));
+        final Employee savedEmployee = employeeService.save(employee);
+
+        verify(employeeRepository).save(employee);
     }
 
     @Test
@@ -45,12 +49,21 @@ class EmployeeServiceTest {
 
     @Test
     void findAll() {
-        //TODO: implement
+        Employee employee1 = new Employee("A", "AA", LocalDate.of(2000,1,1));
+        Employee employee2 = new Employee("B", "BB", LocalDate.of(2000,1,1));
+        when(employeeRepository.findAll()).thenReturn(Arrays.asList(employee1, employee2));
+        List<Employee> employees = employeeService.findAll();
+
+        assertThat(employees).hasSize(2);
+        assertThat(employees).contains(employee1,employee2);
     }
 
     @Test
     void deleteExisting() {
-        //TODO: implement
+        Employee employee = new Employee("A", "AA", LocalDate.of(2000,1,1));
+        when(employeeRepository.existsById(1L)).thenReturn(true);
+        employeeService.delete(1L);
+        verify(employeeRepository).deleteById(1L);
     }
 
     @Test

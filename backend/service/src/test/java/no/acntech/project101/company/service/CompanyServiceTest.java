@@ -35,6 +35,8 @@ class CompanyServiceTest {
 
         final Company savedCompany = companyService.save(company);
 
+        verify(companyRepository, times(1)).save(any());
+
         assertThat(savedCompany.getCompanyName()).isEqualTo(company.getCompanyName());
         assertThat(savedCompany.getOrgNr()).isEqualTo(company.getOrgNr());
     }
